@@ -2,12 +2,12 @@ max_seq_len: 2048
 global_seed: 17
 
 # Run Name
-run_name: llama-2-7b-sanity-check
+run_name: llama-2-chat-7b-sanity-check
 
 model:
   name: hf_causal_lm
   pretrained: true
-  pretrained_model_name_or_path: meta-llama/Llama-2-7b-hf
+  pretrained_model_name_or_path: meta-llama/Llama-2-7b-chat-hf
   config_overrides:
     max_seq_len: ${max_seq_len}
     attn_config:
@@ -17,7 +17,7 @@ model:
 
 # Tokenizer
 tokenizer:
-  name: meta-llama/Llama-2-7b-hf
+  name: meta-llama/Llama-2-7b-chat-hf
   kwargs:
     model_max_length: ${max_seq_len}
 
