@@ -2,17 +2,17 @@ max_seq_len: 2048
 global_seed: 17
 
 # Run Name
-run_name: llama-2-chat-7b-sanity-check
+run_name: llama-2-chat-13b-sanity-check
 
 model:
   name: hf_causal_lm
   pretrained: true
-  pretrained_model_name_or_path: meta-llama/Llama-2-7b-chat-hf
+  pretrained_model_name_or_path: meta-llama/Llama-2-13b-chat-hf
   use_auth_token: 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
 
 # Tokenizer
 tokenizer:
-  name: meta-llama/Llama-2-7b-chat-hf
+  name: meta-llama/Llama-2-13b-chat-hf
   kwargs:
     use_auth_token: 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
     model_max_length: ${max_seq_len}
@@ -83,7 +83,7 @@ global_train_batch_size: 80  # somewhere in the 6-8 * numgpus range seems good
 # System
 seed: ${global_seed}
 device_eval_batch_size: 8
-device_train_microbatch_size: 2
+device_train_microbatch_size: 1
 # device_train_microbatch_size: auto
 precision: amp_bf16
 
